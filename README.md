@@ -359,6 +359,15 @@ def bfs(root):
 - **Study Plan:** Read 1 case study/day. Focus on RADIO framework (Requirements, Architecture, Data Model, Interface, Optimizations).
 - **Interview:** Start with clarifying questions—scale, devices, offline support, real-time needs.
 
+**[Frontend at Scale](https://frontendatscale.com/)**  
+*Why:* Newsletter and articles on frontend architecture, scaling, and design patterns by Maxi Ferreira (Staff Engineer).  
+*How to Use:*
+- **Study Plan:** Read newsletter archive (2 weeks). Focus on articles like "Visualizing Frontend Architecture," "Domain Modeling for Building UIs," "Separation of Concerns."
+- **Key Insights:** Architectural decision records (ADRs), modular monoliths, complexity management, coupling vs. cohesion.
+- **Interview Script:** "I follow frontend architecture best practices like separation of concerns and document decisions using ADRs to track tradeoffs."
+- **Pitfall:** Don't just read—apply concepts to your current projects to internalize patterns.
+- **Exercise:** Draw an architecture diagram for a project you've worked on using the C4 model (Context, Container, Component, Code).
+
 **[Frontend System Design YouTube (Chirag Goel)](https://www.youtube.com/c/chirag-goel)**  
 *Why:* Walkthrough of Uber, Netflix, Twitter UI designs.  
 *How to Use:*
@@ -699,6 +708,50 @@ const Dashboard = React.lazy(() => import('./Dashboard'));
 
 ## Tooling, Build & Deploy
 
+### Resources
+
+**[Vite Documentation](https://vitejs.dev/)**  
+*Why:* Next-generation build tool—lightning-fast HMR and optimized production builds.  
+*How to Use:*
+- **Study Plan:** 2 days. Read Getting Started and Features sections.
+- **Interview Script:** "I use Vite for its instant HMR and native ES modules support—dev server starts in milliseconds vs. seconds with Webpack."
+- **Exercise:** Migrate a Create React App project to Vite and compare build times.
+
+**[Next.js Documentation](https://nextjs.org/docs)**  
+*Why:* React framework with SSR, ISR, file-based routing, and API routes built-in.  
+*How to Use:*
+- **Study Plan:** 1 week. Focus on App Router, Server Components, and rendering strategies.
+- **Interview Gold:** Explain when to use SSR vs. SSG vs. ISR vs. CSR.
+- **Exercise:** Build a blog with SSG for posts, ISR for content updates, and CSR for comments.
+
+**[TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/)**  
+*Why:* Type safety catches bugs at compile time and improves developer experience.  
+*How to Use:*
+- **Study Plan:** 1 week. Focus on Basic Types, Interfaces, Generics, and Utility Types.
+- **Interview Script:** "TypeScript reduces runtime errors by 15-38% according to studies. I use it for better IDE autocomplete and refactoring confidence."
+- **Exercise:** Add TypeScript to an existing JavaScript project incrementally.
+
+**[ESLint Documentation](https://eslint.org/docs/latest/)**  
+*Why:* Catch code quality issues and enforce consistent style across teams.  
+*How to Use:*
+- **Study Plan:** 1 day. Learn about rules, plugins, and custom configurations.
+- **Interview:** "I configure ESLint with accessibility plugins (eslint-plugin-jsx-a11y) to catch a11y issues during development."
+- **Exercise:** Set up ESLint with Prettier and Airbnb style guide.
+
+**[GitHub Actions Documentation](https://docs.github.com/en/actions)**  
+*Why:* Automate CI/CD pipelines—tests, builds, deployments.  
+*How to Use:*
+- **Study Plan:** 2 days. Focus on workflow syntax, marketplace actions, and secrets management.
+- **Interview Script:** "I set up GitHub Actions to run tests, Lighthouse CI, and bundle size checks on every PR. Failed checks block merges."
+- **Exercise:** Create a workflow that runs tests, builds, and deploys to Vercel on merge to main.
+
+**[Storybook Documentation](https://storybook.js.org/docs)**  
+*Why:* Develop and document UI components in isolation.  
+*How to Use:*
+- **Study Plan:** 3 days. Learn about stories, args, decorators, and addons.
+- **Interview Gold:** "Storybook improves collaboration between designers and developers—design specs and coded components live together."
+- **Exercise:** Set up Storybook for a component library with accessibility and interaction testing addons.
+
 ### The Modern Frontend Stack
 
 | Tool | Purpose | Why It Matters |
@@ -764,7 +817,7 @@ Machine coding rounds test your ability to **build working features under time p
 
 ### Resources
 
-**[GreatFrontEnd](https://www.greatfrontend.com/questions)**  
+**[GreatFrontEnd Questions](https://www.greatfrontend.com/questions)**  
 *Why:* Real machine coding questions asked at top companies (Google, Meta, Amazon).  
 *How to Use:*
 - **Study Plan:** 2 weeks. Solve 2-3 questions per day. Time yourself (60-90 min each).
@@ -785,6 +838,20 @@ Machine coding rounds test your ability to **build working features under time p
 - **Study Plan:** 3-4 days. Complete challenges in timed mode (60 min).
 - **Focus:** Component behavior, state management, API integration.
 - **Exercise:** Build a "Stop Watch" with start, stop, lap, and reset functionality.
+
+**[DevTools Tech - Frontend Challenges](https://www.devtools.tech/)**  
+*Why:* Practice frontend machine coding with real interview-style problems.  
+*How to Use:*
+- **Study Plan:** 1 week. Complete challenges in HTML/CSS and JavaScript sections.
+- **Focus Areas:** Vanilla JavaScript implementations, DOM manipulation, event handling.
+- **Exercise:** Build a multi-step form with validation and local storage persistence.
+
+**[Learners Bucket - Frontend Machine Coding](https://learnersbucket.com/examples/interview/)**  
+*Why:* Collection of commonly asked frontend interview coding problems.  
+*How to Use:*
+- **Study Plan:** 5 days. Solve problems in "Frontend Machine Coding" section.
+- **Interview Gold:** Star rating, progress bar, pagination, accordion, modal.
+- **Exercise:** Implement a progress bar that fills based on scroll position.
 
 ### Common Machine Coding Problems
 
