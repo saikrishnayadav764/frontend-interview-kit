@@ -1,6 +1,6 @@
 # Frontend Interview & Learning Kit 🚀
 
-![GitHub stars](https://img.shields.io/github/stars/sahil/frontend-interview-kit?style=social)
+![GitHub stars](https://img.shields.io/github/stars/sash9696/frontend-interview-kit?style=social)
 ![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)
 ![Last Updated](https://img.shields.io/badge/updated-November%202025-green.svg)
 
@@ -21,6 +21,7 @@
 - [Accessibility (a11y)](#accessibility-a11y)
 - [Performance & Web Vitals](#performance--web-vitals)
 - [Tooling, Build & Deploy](#tooling-build--deploy)
+- [Machine Coding Rounds](#machine-coding-rounds)
 - [Communication & Technical Leadership](#communication--technical-leadership)
 - [Interview Kit](#interview-kit)
 - [Projects & Build List](#projects--build-list)
@@ -141,6 +142,16 @@
 - **Interview:** "In JavaScript, `this` is determined by how a function is called, not where it's defined. Arrow functions lexically bind `this` from their enclosing scope."
 - **Pitfall:** The books are dense—take notes, build examples.
 - **Exercise:** Explain the difference between `call`, `apply`, and `bind` with code.
+
+**[Learners Bucket](https://learnersbucket.com/)**  
+*Why:* Hands-on JavaScript problems, polyfills, and frontend interview questions.  
+*How to Use:*
+- **Study Plan:** 1 week. Focus on JavaScript section—implement polyfills for `map`, `filter`, `reduce`, `bind`, `call`, `apply`.
+- **Interview Gold:** "Polyfills" section—interviewers often ask "implement Array.prototype.map from scratch."
+- **Practical Exercises:** Data structure implementations in JS (Linked List, Queue, Stack, Trie).
+- **Interview Script:** "I implemented a polyfill for `Promise.all` that handles rejection properly and maintains order of resolved values."
+- **Pitfall:** Don't just copy solutions—understand the underlying concepts (closures for bind, iteration patterns for array methods).
+- **Exercise:** Implement `Function.prototype.bind` and explain how it uses closures to preserve context.
 
 ### Critical Concepts for Interviews
 
@@ -733,6 +744,242 @@ jobs:
 
 ---
 
+## Machine Coding Rounds
+
+Machine coding rounds test your ability to **build working features under time pressure** (60-120 minutes). Unlike DSA, these focus on **UI components, interactions, and real-world functionality**.
+
+### What to Expect
+
+**Common Challenges:**
+- Build a component (autocomplete, infinite scroll, image carousel, star rating)
+- Implement a feature (debounced search, drag-and-drop, undo/redo)
+- Create a mini-app (todo list, calculator, tic-tac-toe, weather dashboard)
+
+**Evaluation Criteria:**
+- ✅ **Working code** - Does it work? Are edge cases handled?
+- ✅ **Code quality** - Clean, readable, maintainable code
+- ✅ **Problem-solving** - How you approach breaking down the problem
+- ✅ **Best practices** - Component structure, state management, error handling
+- ✅ **Performance** - Efficient rendering, proper optimizations
+
+### Resources
+
+**[GreatFrontEnd](https://www.greatfrontend.com/questions)**  
+*Why:* Real machine coding questions asked at top companies (Google, Meta, Amazon).  
+*How to Use:*
+- **Study Plan:** 2 weeks. Solve 2-3 questions per day. Time yourself (60-90 min each).
+- **Focus Areas:** UI components (autocomplete, tabs, accordion), data fetching, form handling.
+- **Interview Script:** "I broke down the autocomplete into state management, debouncing, keyboard navigation, and accessibility."
+- **Exercise:** Build an autocomplete with keyboard navigation (Up/Down arrows, Enter, Esc) and explain your approach.
+
+**[BigFrontEnd.dev](https://bigfrontend.dev/)**  
+*Why:* JavaScript coding challenges and React component questions.  
+*How to Use:*
+- **Study Plan:** 1 week. Focus on "JavaScript Coding" and "React Coding" sections.
+- **Interview Gold:** Implement utility functions (throttle, debounce, flatten, deepClone).
+- **Exercise:** Implement `Promise.all`, `Promise.race`, and explain edge cases.
+
+**[Frontend Eval](https://frontendeval.com/)**  
+*Why:* Timed challenges mimicking real interview conditions.  
+*How to Use:*
+- **Study Plan:** 3-4 days. Complete challenges in timed mode (60 min).
+- **Focus:** Component behavior, state management, API integration.
+- **Exercise:** Build a "Stop Watch" with start, stop, lap, and reset functionality.
+
+### Common Machine Coding Problems
+
+#### 1. **Autocomplete / Typeahead**
+**Requirements:**
+- Fetch suggestions from API as user types
+- Debounce input (300ms)
+- Keyboard navigation (Up/Down/Enter/Esc)
+- Handle loading and error states
+- Accessible (ARIA attributes)
+
+**Key Concepts:** Debouncing, async/await, keyboard events, useRef, accessibility
+
+**Gotchas:**
+- Race conditions (cancel old requests)
+- Memory leaks (cleanup on unmount)
+- Empty states and error handling
+
+---
+
+#### 2. **Infinite Scroll**
+**Requirements:**
+- Load 20 items initially
+- Fetch next page when user scrolls to bottom
+- Show loading indicator
+- Handle end of data
+
+**Key Concepts:** Intersection Observer, pagination, useState, useEffect
+
+**Gotchas:**
+- Avoid multiple simultaneous fetches
+- Cleanup observer on unmount
+- Handle errors gracefully
+
+---
+
+#### 3. **Star Rating Component**
+**Requirements:**
+- Click to rate (1-5 stars)
+- Hover preview
+- Half-star support (optional)
+- Keyboard accessible
+
+**Key Concepts:** Event handling, controlled components, CSS (star icons)
+
+**Gotchas:**
+- Separate hover state from selected state
+- Reset hover on mouse leave
+- Keyboard navigation (Tab, Enter, Arrow keys)
+
+---
+
+#### 4. **Image Carousel**
+**Requirements:**
+- Show one image at a time
+- Previous/Next buttons
+- Auto-play (optional)
+- Dot indicators
+
+**Key Concepts:** useState, useEffect, setInterval, CSS transitions
+
+**Gotchas:**
+- Clear interval on unmount
+- Handle edge cases (first/last image)
+- Pause auto-play on hover
+
+---
+
+#### 5. **Tic-Tac-Toe**
+**Requirements:**
+- 3x3 grid, X and O players
+- Detect winner
+- Reset game
+- Show game history (optional)
+
+**Key Concepts:** State management, game logic, winner detection algorithm
+
+**Gotchas:**
+- Immutable state updates
+- Efficient winner check (O(1) instead of checking all combinations)
+- Handle draw (board full, no winner)
+
+---
+
+### Machine Coding Template
+
+Use this structure for any component:
+
+```javascript
+import React, { useState, useEffect, useRef } from 'react';
+
+function ComponentName({ prop1, prop2 }) {
+  // 1. State
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  
+  // 2. Refs (for DOM access or mutable values)
+  const inputRef = useRef(null);
+  
+  // 3. Effects (data fetching, subscriptions)
+  useEffect(() => {
+    // Fetch data or set up subscriptions
+    
+    // Cleanup
+    return () => {
+      // Remove listeners, cancel requests
+    };
+  }, [/* dependencies */]);
+  
+  // 4. Event handlers
+  const handleClick = () => {
+    // Logic
+  };
+  
+  // 5. Render
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
+  
+  return (
+    <div>
+      {/* Component UI */}
+    </div>
+  );
+}
+
+export default ComponentName;
+```
+
+### Interview Strategy
+
+**Before coding (5-10 minutes):**
+1. **Clarify requirements** - Ask about edge cases, browser support, accessibility needs
+2. **Design component structure** - Sketch on paper or whiteboard
+3. **Identify state** - What needs to be tracked?
+4. **Plan approach** - Break into smaller tasks
+
+**While coding (50-80 minutes):**
+1. **Start with basic structure** - Get something rendering first
+2. **Add functionality incrementally** - One feature at a time
+3. **Handle edge cases** - Empty states, errors, loading
+4. **Test as you go** - Run code frequently
+5. **Communicate** - Explain your thought process
+
+**After coding (10-20 minutes):**
+1. **Test edge cases** - Empty input, rapid clicks, network errors
+2. **Code cleanup** - Remove console.logs, add comments
+3. **Discuss improvements** - Accessibility, performance, scaling
+
+### Practice Schedule (2 Weeks)
+
+**Week 1: Foundations**
+- Day 1-2: Autocomplete (2 versions: basic, then with keyboard nav)
+- Day 3: Star Rating + Tooltip
+- Day 4: Infinite Scroll
+- Day 5: Image Carousel
+- Day 6-7: Todo List (add, delete, edit, filter, persist to localStorage)
+
+**Week 2: Advanced**
+- Day 8: Tic-Tac-Toe
+- Day 9: Debounced Search with Filters
+- Day 10: Drag and Drop (Kanban board)
+- Day 11: Pagination with Filters
+- Day 12: Modal with Focus Trap
+- Day 13-14: Mock interview (timed, 90 min)
+
+### Common Mistakes to Avoid
+
+❌ **Don't:**
+- Jump into coding without clarifying requirements
+- Over-engineer (don't add Redux for a simple component)
+- Ignore edge cases (null, undefined, empty arrays)
+- Forget cleanup (event listeners, intervals, API calls)
+- Skip accessibility (keyboard nav, ARIA)
+
+✅ **Do:**
+- Ask clarifying questions
+- Start simple, iterate
+- Handle loading and error states
+- Test edge cases
+- Explain your reasoning out loud
+- Use semantic HTML
+- Write clean, readable code
+
+**💡 Pro Tips:**
+- Practice with a timer—60-90 minutes max per problem to simulate real pressure.
+- Use browser DevTools actively—check React DevTools for unnecessary re-renders, console for errors.
+- Build a personal "component library" of 5-10 commonly asked components you can reference quickly.
+- Record yourself coding and watch playback—you'll catch nervous habits, unclear explanations, and areas where you hesitate.
+- Don't memorize solutions—memorize patterns (debouncing, keyboard handling, infinite scroll logic) that apply across problems.
+
+**Tags:** `#machine-coding` `#live-coding` `#components` `#react`
+
+---
+
 ## Communication & Technical Leadership
 
 ### How to Present Tradeoffs
@@ -1142,47 +1389,6 @@ We reject:
 └────────────────────────────────────────────────────────┘
 ```
 
----
-
-### Comparison with Other Repos
-
-**This Kit vs. Others:**
-
-| Repo | Strengths | Gaps | Our Improvement |
-|------|-----------|------|-----------------|
-| [front-end-interview-handbook](https://github.com/yangshun/front-end-interview-handbook) | Great Q&A format | Light on study plans | We add 8-week DSA plan, project ideas |
-| [frontend-learning-kit](https://github.com/sadanandpai/frontend-mini-challenges) | Good mini-challenges | No system design | We add 3 full case studies |
-| [javascript-questions](https://github.com/lydiahallie/javascript-questions) | Excellent JS quiz | No React, no DSA | We integrate JS + React + DSA |
-
-**Our Unique Value:**  
-We combine *pattern-based learning* (Grind 169) with *practical guidance* (tradeoffs, interview scripts) and *actionable projects*—not just theory.
-
----
-
-### References
-
-- [Tech Interview Handbook](https://www.techinterviewhandbook.org/)
-- [GreatFrontEnd](https://www.greatfrontend.com/)
-- [MDN Web Docs](https://developer.mozilla.org/)
-- [web.dev](https://web.dev/)
-
----
-
-## License
-
-This project is licensed under the **Apache License 2.0**.
-
-**Why Apache-2.0?**  
-Apache-2.0 is a permissive license that allows commercial use, modification, and distribution while providing patent protection. Unlike MIT, it includes explicit patent grants, protecting users from patent litigation. It's used by major projects (Kubernetes, Android) and is business-friendly.
-
-**Alternatives:**
-- **MIT:** Simpler, no patent clause (less protection)
-- **CC BY 4.0:** Good for docs, not code
-- **GPL:** Copyleft (derivatives must be open-source)
-
-See the [LICENSE](LICENSE) file for full text.
-
----
 
 ## If This Helped You
 
@@ -1198,7 +1404,7 @@ See the [LICENSE](LICENSE) file for full text.
 
 ---
 
-**Built with ❤️ by the dev community. Good luck with your interviews!**
+**Built with ❤️ by the dev. Good luck with your interviews!**
 
 ---
 
