@@ -644,6 +644,25 @@ Research shows **pattern recognition** beats volume. The [Grind 169 list](https:
 - Watch DFS/BFS animations. Understand why DFS uses a stack, BFS uses a queue.
 - **Interview:** "BFS finds shortest path in unweighted graphs; DFS is better for detecting cycles or topological sort."
 
+**[Graph Algorithms for Technical Interviews - freeCodeCamp](https://www.youtube.com/watch?v=tWVWeAqZ0WU)**  
+*Why:* Complete graph algorithms tutorial covering all patterns needed for interviews—DFS, BFS, shortest path, islands, etc.  
+*How to Use:*
+- **Study Plan:** 2 days. Watch the full video (multiple hours), code along with examples.
+- **Interview Gold:** Covers graph traversal patterns (DFS/BFS), island problems, connected components, shortest path algorithms.
+- **Key Concepts:** Adjacency list representation, visited sets, recursive vs iterative DFS, level-order BFS.
+- **Interview Script:** "For graph problems, I identify if it's traversal (DFS/BFS), shortest path (BFS/Dijkstra), or connectivity (Union-Find). Island problems are DFS with visited tracking."
+- **Exercise:** Solve "Number of Islands," "Clone Graph," and "Course Schedule" after watching.
+
+**[Dynamic Programming - Learn to Solve Algorithmic Problems - freeCodeCamp](https://www.youtube.com/watch?v=oBt53YbR9Kk)**  
+*Why:* Comprehensive DP tutorial explaining memoization, tabulation, and pattern recognition—one of the best DP explanations available.  
+*How to Use:*
+- **Study Plan:** 3-4 days. Watch full video (5+ hours), pause to solve problems before seeing solutions.
+- **Interview Gold:** Covers DP fundamentals, fibonacci variants, grid traveler, coin change, subset sum, longest subsequence.
+- **Key Approach:** Start with brute force recursion → add memoization → convert to tabulation.
+- **Interview Script:** "I approach DP by first writing the recursive solution, identifying overlapping subproblems, then caching results. I can implement both top-down (memoization) and bottom-up (tabulation)."
+- **Pitfall:** Don't skip the brute force step—understanding the recursive structure is crucial before optimizing.
+- **Exercise:** Solve "House Robber," "Climbing Stairs," "Coin Change" using both memoization and tabulation after watching.
+
 ### Pattern Deep Dive (Examples)
 
 #### Pattern 1: Two Pointers
@@ -746,6 +765,14 @@ def bfs(root):
 *How to Use:*
 - Watch 3 videos; pause and diagram yourself.
 - **Pitfall:** Don't jump to tech stack—define requirements first.
+
+**[Front-End Engineer YouTube Playlist](https://www.youtube.com/watch?v=3MADCVqL534&list=PLI9W87-Dqn7j_x6QtR6sUjycJR7nQLBqT)**  
+*Why:* Comprehensive playlist covering frontend system design concepts, architecture, and real-world examples.  
+*How to Use:*
+- **Study Plan:** 1-2 weeks. Watch 1-2 videos per day, take notes on patterns and approaches.
+- **Focus Areas:** Component architecture, state management at scale, API design, caching strategies.
+- **Interview Script:** "I learned about scalable frontend architectures from Front-End Engineer's series—covers performance optimization, micro-frontends, and design patterns."
+- **Exercise:** Pick one video's topic and implement a mini version in your project.
 
 ### Case Study 1: **High-Throughput Analytics Dashboard**
 
